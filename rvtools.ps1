@@ -1,3 +1,4 @@
-$RVToolsPath = "C:\Program Files (x86)\Robware\RVTools"
+. ".\variables.ps1"
+
 set-location $RVToolsPath
 Start-Process -FilePath ".\RVTools.exe"
