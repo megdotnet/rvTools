@@ -8,18 +8,8 @@ New-Item -ItemType "directory" -Path $outpath
 
 set-location $RVToolsPath
 
-$health = "vHealth"
-$datastore = "vDatastore"
-$ext = ".xlsx"
-
-$file = -join ($health, $ext)
-$arguments = "-u $VMWuser -p $VMWpass -s $VMWserv -c ExportvHealth2xlsx -d $outpath -f $file"
+$arguments = "-u $VMWuser -p $VMWpass -s $VMWserv -c ExportvHealth2xlsx -d $outpath -f vHealth.xlsx"
 Start-Process -FilePath ".\RVTools.exe" -ArgumentList $arguments
 
-$file = -join ($datastore, $ext)
-$arguments = "-u $VMWuser -p $VMWpass -s $VMWserv -c ExportvDatastore2xlsx -d $outpath -f $file"
+$arguments = "-u $VMWuser -p $VMWpass -s $VMWserv -c ExportvDatastore2xlsx -d $outpath -f vDatastore.xlsx"
 Start-Process -FilePath ".\RVTools.exe" -ArgumentList $arguments
-
-#merge excel files
-#Import-Module ImportExcel
-#Import-Excel .\vDatastore.xlsx -WorksheetName vDatastore | Export-Excel rvtools.xlsx -WorksheetName vDatastore
