@@ -8,7 +8,3 @@ VMWare server address, credentials, email addresses, etc will all be defined in 
 For information on encrypting the dredentials, see the RV Tools documentation at: 
 https://robware.net/download/RVTools.pdf
 Specifically the section titled Password encryption.
-
-You will need to install the ImportExcel module for powershell. 
-Install-Module -Name ImportExcel
-
